@@ -1,4 +1,4 @@
-//create an object
+
 class Bakery {
   constructor(coname) {
     this._coname = coname
@@ -47,7 +47,6 @@ class Food extends Item {
   }
 }
 
-//food Superclasses of types
 class Cookie extends Food {
   constructor(coname, type, name, price, flavorPro, temp, seasonal) {
     super(coname, type, name, price, flavorPro, temp)
@@ -60,13 +59,11 @@ class Cookie extends Food {
 }
 
 class Bagel extends Food {
-  constructor(coname, type, name, price, flavorPro, temp, seasonal,extras) {
+  constructor(coname, type, name, price, flavorPro, temp, seasonal, extras) {
     super(coname, type, name, price, flavorPro, temp)
     this._extras = extras
   }
-  get specialty() {
-    return this._specialty
-  }
+  
   get extras() {
     return this._extras
   }
@@ -76,16 +73,16 @@ class Bagel extends Food {
   }
 }
 
-
+//Cookies and Bagel Objects
 const peanutbutter = new Cookie('Sweets Day & Night Bakery', 'Cookie', 'Old Fashion PeanutButter', 2.50, 'sweet', 'room temperature', false)
 const frostedSugar = new Cookie('Sweets Day & Night Bakery','Cookie', 'Frosted Sugar Cookie', 3, 'sweet', 'chilled', false)
-const spicedginger = new Cookie('Sweets Day & Night Bakery', 'Cookie', 'Holiday Spiced Gingersnap', 1.75, 'sweet', 'room temperature')
+const spicedginger = new Cookie('Sweets Day & Night Bakery', 'Cookie', 'Holiday Spiced Gingersnap', 1.75, 'sweet', 'room temperature', true)
 
 const everythingBagel = new Bagel('Sweets Day & Night Bakery', 'Bagel', 'Mervs Everything', 2, 'Savory', 'sliced & toasted', false, 'Cream Cheese, Lox')
 const blueberry = new Bagel('Sweets Day & Night Bakery', 'Bagel', 'Double Blueberry', 2, 'Savory', 'sliced & toasted', false,'Cream Cheese, Mervs specialty Jams')
 
 
-
+//Check results
 console.log(everythingBagel.serve());
 console.log(everythingBagel.bagel());
 console.log(peanutbutter.serve());
